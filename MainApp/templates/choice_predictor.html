@@ -1,0 +1,50 @@
+{% extends 'main.html' %} {% block content %}
+<div class="form-container">
+  <form method="post" action="{% url 'choice_predictor_display' %}">
+    {% csrf_token %}
+    <input
+      name="rank"
+      type="number"
+      placeholder="Enter your category rank"
+      required
+    />
+    <select id="category" name="category" required>
+      <option value="">Select your Category:</option>
+      <option value="OPEN">OPEN</option>
+      <option value="EWS">EWS</option>
+      <option value="OPEN(PwD)">OPEN(PwD)</option>
+      <option value="OBC-NCL">OBC-NCL</option>
+      <option value="SC">SC</option>
+      <option value="ST">ST</option>
+    </select>
+    <select id="round" name="round" required>
+      <option value="">Select round no:</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+    <select id="year" name="year" required>
+      <option value="">Select year:</option>
+      <option value="2016">2016</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+      <option value="2023">2023</option>
+    </select>
+    <select id="gender" name="gender" required>
+      <option value="">Select gender:</option>
+      <option value="Gender-Neutral">Gender-Neutral</option>
+      <option value="Female-only (including Supernumerary)">
+        Female-only (including Supernumerary)
+      </option>
+    </select>
+    <input type="submit" value="Submit" />
+  </form>
+</div>
+{% endblock %}

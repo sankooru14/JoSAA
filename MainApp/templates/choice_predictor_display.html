@@ -1,0 +1,12 @@
+{% extends 'main.html' %} {% block content %}
+<div>
+  {% if df %} {% for x in df %}
+  <div class="content-item">
+    <li>{{ x.institute }}</li>
+    <li>{{ x.Branch }}</li>
+  </div>
+  {% endfor %} {% else %}
+  <p>No data found.</p>
+  {% endif %}
+</div>
+{% endblock %}

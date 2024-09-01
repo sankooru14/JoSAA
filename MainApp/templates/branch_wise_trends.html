@@ -1,0 +1,103 @@
+{% extends "main.html" %} {% block content%}
+
+<h1>branch_wise_trends</h1>
+<div class="form-container">
+  <form method="post" action="{% url 'branch_wise_trends_display' %}">
+    <br />
+    <select id="category" name="category" required>
+      <option value="">Select your Category:</option>
+      <option value="OPEN">OPEN</option>
+      <option value="EWS">EWS</option>
+      <option value="OPEN(PwD)">OPEN(PwD)</option>
+      <option value="OBC-NCL">OBC-NCL</option>
+      <option value="SC">SC</option>
+      <option value="ST">ST</option>
+    </select>
+    <br />
+    <select id="iit" name="iit" required>
+      <option value="">Select IIT:</option>
+      <option value="Indian Institute of Technology Bhubaneswar">
+        Indian Institute of Technology Bhubaneswar
+      </option>
+      <option value="Indian Institute of Technology Bombay">
+        Indian Institute of Technology Bombay
+      </option>
+      <option value="Indian Institute of Technology Mandi">
+        Indian Institute of Technology Mandi
+      </option>
+      <option value="Indian Institute of Technology Delhi">
+        Indian Institute of Technology Delhi
+      </option>
+      <option value="Indian Institute of Technology Indore">
+        Indian Institute of Technology Indore
+      </option>
+      <option value="Indian Institute of Technology Kharagpur">
+        Indian Institute of Technology Kharagpur
+      </option>
+      <option value="Indian Institute of Technology Hyderabad">
+        Indian Institute of Technology Hyderabad
+      </option>
+      <option value="Indian Institute of Technology Jodhpur">
+        Indian Institute of Technology Jodhpur
+      </option>
+      <option value="Indian Institute of Technology Kanpur">
+        Indian Institute of Technology Kanpur
+      </option>
+      <option value="Indian Institute of Technology Madras">
+        Indian Institute of Technology Madras
+      </option>
+      <option value="Indian Institute of Technology Gandhinagar">
+        Indian Institute of Technology Gandhinagar
+      </option>
+      <option value="Indian Institute of Technology Patna">
+        Indian Institute of Technology Patna
+      </option>
+      <option value="Indian Institute of Technology Roorkee">
+        Indian Institute of Technology Roorkee
+      </option>
+      <option value="Indian Institute of Technology (ISM) Dhanbad">
+        Indian Institute of Technology (ISM) Dhanbad
+      </option>
+      <option value="Indian Institute of Technology Ropar">
+        Indian Institute of Technology Ropar
+      </option>
+      <option value="Indian Institute of Technology (BHU) Varanasi">
+        Indian Institute of Technology (BHU) Varanasi
+      </option>
+      <option value="Indian Institute of Technology Guwahati">
+        Indian Institute of Technology Guwahati
+      </option>
+      <option value="Indian Institute of Technology Bhilai">
+        Indian Institute of Technology Bhilai
+      </option>
+      <option value="Indian Institute of Technology Goa">
+        Indian Institute of Technology Goa
+      </option>
+      <option value="Indian Institute of Technology Palakkad">
+        Indian Institute of Technology Palakkad
+      </option>
+      <option value="Indian Institute of Technology Tirupati">
+        Indian Institute of Technology Tirupati
+      </option>
+      <option value="Indian Institute of Technology Jammu">
+        Indian Institute of Technology Jammu
+      </option>
+      <option value="Indian Institute of Technology Dharwad">
+        Indian Institute of Technology Dharwad
+      </option>
+    </select>
+    <br />
+
+    {% csrf_token %}
+    <select id="gender" name="gender" required>
+      <option value="">Select gender:</option>
+      <option value="Gender-Neutral">Gender-Neutral</option>
+      <option value="Female-only (including Supernumerary)">
+        Female-only (including Supernumerary)
+      </option>
+    </select>
+    <br />
+    <input type="submit" value="Show trends" />
+  </form>
+</div>
+{% endblock content %}

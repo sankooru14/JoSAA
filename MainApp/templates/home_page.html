@@ -1,0 +1,64 @@
+{% extends "main.html" %} {% block content %}
+<style>
+  /* Additional styles for menu_page.html */
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: #fff; /* White text color */
+  }
+
+  .button-container {
+    text-align: center; /* Center align button */
+    margin-top: 20px; /* Add some margin */
+  }
+  .box{
+    display: flex;
+    flex-direction: row;
+  }
+  button {
+    
+                    display: inline-block;
+                    outline: none;
+                    cursor: pointer;
+                    font-size: 14px;
+                    line-height: 1;
+                    border-radius: 500px;
+                    transition-property: background-color,border-color,color,box-shadow,filter;
+                    transition-duration: .3s;
+                    border: 1px solid transparent;
+                    letter-spacing: 2px;
+                    min-width: 160px;
+                    text-transform: uppercase;
+                    white-space: normal;
+                    font-weight: 700;
+                    text-align: center;
+                    padding: 17px 48px;
+                    color: #fff;
+                    background-color: #1ED760;
+                    height: 48px;
+                    :hover{
+                        transform: scale(1.04);
+                        background-color: #21e065;
+                    }
+                
+  }
+
+  
+</style>
+<div class="box">
+  <div>
+  <h1 style="color:black">Your Guide to the Best Colleges based on your  Rank</h1>
+  <div class="button-container">
+    <button id="menu-page-button" >Let's Get Started</button>
+  </div>
+  </div>
+  <div>
+    <img src="https://freesvg.org/img/ryanlerch_thinkingboy_outline.png" alt="">
+  </div>
+</div>
+<script>
+  document.getElementById("menu-page-button").onclick = function () {
+    location.href = "{% url 'menu_page' %}";
+  };
+</script>
+{% endblock %}
